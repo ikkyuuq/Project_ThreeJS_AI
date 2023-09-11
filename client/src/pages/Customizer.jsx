@@ -54,15 +54,18 @@ const Customizer = () => {
     if (!prompt) return alert("Please enter the prompt");
     try {
       setGeneratingImg(true);
-      const response = await fetch(config.development.backendUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          prompt,
-        }),
-      });
+      const response = await fetch(
+        `${config.development.backendUrl}api/v1/dalle`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+          }),
+        }
+      );
 
       const data = await response.json();
 

@@ -4,7 +4,7 @@ import { useSnapshot } from "valtio";
 
 import state from "../store";
 
-const BackDrop = () => {
+const Backdrop = () => {
   const snap = useSnapshot(state);
   const shadows = useRef();
   return (
@@ -36,4 +36,4 @@ const BackDrop = () => {
   );
 };
 
-export default BackDrop;
+export default Backdrop;
